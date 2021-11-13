@@ -1,9 +1,8 @@
 #!/bin/bash
-echo .
-echo Abracadabra!
-cd ATmega8u2Code/HexFiles
-echo Trying to program for Arduino Uno R1/R2...
-dfu-programmer at90usb82 flash UnoJoy.hex
+
+file="ATmega8u2Code/UnoJoy.hex"
+echo Trying to program $file onto Arduino Uno R1/R2...
+dfu-programmer at90usb82 flash $file
 
 exit_code=$?
 
@@ -11,7 +10,7 @@ if [ $exit_code = 127 ]; then
 	echo "Seems like the dfu-programmer is not installed. You can install it by typing: sudo apt install dfu-programmer"
 elif [ $exit_code != 0 ]; then
 	echo "We didn't find the R1/R2 model, checking for an R3..."
-	dfu-programmer atmega16u2 flash UnoJoy.hex
+	dfu-programmer atmega16u2 flash $file
 	if [ $? != 0 ]; then
 		echo
 		echo "dfu-programmer couldn't connect to the Arduino..."

@@ -53,8 +53,10 @@
  **************************************************************************/
 
 // You can change these to give your code its own name.
-#define STR_MANUFACTURER	L"OpenChord X RMIT Exertion Games Lab"
-#define STR_PRODUCT			L"UnoJoy Joystick"
+//#define STR_MANUFACTURER	L"OpenChord X RMIT Exertion Games Lab"
+#define STR_MANUFACTURER	L"Grumblz Games Lab"
+// #define STR_PRODUCT		L"UnoJoy Joystick"
+#define STR_PRODUCT		L"DIY Joystick"
 //#define STR_MANUFACTURER	L"SEGA"
 //#define STR_PRODUCT		L"VIRTUA STICK High Grade"
 
@@ -63,9 +65,12 @@
 // Windows, even though the driver is supplied by Microsoft, an
 // INF file is needed to load the driver.  These numbers need to
 // match the INF file.
-#define VENDOR_ID		0x10C4
-#define PRODUCT_ID		0x82C0
-
+// Ref: https://the-sz.com/products/usbid/index.php
+// #define VENDOR_ID		0x10C4
+// #define PRODUCT_ID		0x82C0
+// Logitech G29 PS3
+#define VENDOR_ID  0x046D
+#define PRODUCT_ID 0xC24F
 
 // USB devices are supposed to implement a halt feature, which is
 // rarely (if ever) used.  If you comment this line out, the halt
