@@ -1,0 +1,44 @@
+Use Arduino Uno, genuine w/ Atmega16U!
+
++ Switch easily between Arduino programming and gamepad mode
+- Only 8-bit stick inputs (instead of 10-bit available) due to communication between Atmega32 and Atmega16
+- Makefile needed to be fixed to run
+  MCU = atmega8u2
+  F_CPU = 8000000
+  
+Compiling of the Atmega16/Atmega8:
+$ sudo apt-get install dfu-programmer gcc-avr avr-libc
+
+Change the USB Vendor/Product ID (VID:PID) in usb_gamepad.c
+https://www.the-sz.com/products/usbid/index.php?v=0x046D
+VID:PID: 10c4:82c0
+=> 0x046D: 0xC260 voor Logitech G29 (PS4)
+
+To do:
+-------
+o Check all sticks and buttons
+o Fix 10-bit AD-data
+o Check usable VID:PID
+
+Button test met default setting: 6 axis, 14 buttons
+
+Stick/Button   jstest	Arduino
+-------------------------------
+leftStickX     Axis0	A0
+leftStickY     Axis1	A1
+rightStickX    Axis2	A2
+rightStickY    Axis3	A3
+triangle       Butt3	 2
+circle	       Butt2	 3
+square	       Butt0	 4
+cross	       Butt1	 5
+dpadUp	       Axis5-	 6	       
+dpadDown       Axis5+	 7
+dpadLeft       Axis4-	 8
+dpadRight      Axis4+	 9
+l1	       Butt4	10
+r1	       Butt5	11
+select	       Butt8	12
+start	       Butt9	A4
+home	       Butt12	A5
+--------------------------------  

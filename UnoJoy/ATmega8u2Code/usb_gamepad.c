@@ -66,11 +66,12 @@
 // INF file is needed to load the driver.  These numbers need to
 // match the INF file.
 // Ref: https://the-sz.com/products/usbid/index.php
-// #define VENDOR_ID		0x10C4
-// #define PRODUCT_ID		0x82C0
+#define VENDOR_ID		0x10C4
+#define PRODUCT_ID		0x82C0
 // Logitech G29 PS3
-#define VENDOR_ID  0x046D
-#define PRODUCT_ID 0xC24F
+// #define VENDOR_ID  0x046D
+// #define PRODUCT_ID 0xC24F
+// => not enough fields in HID_OUTPUT_REPORT 0
 
 // USB devices are supposed to implement a halt feature, which is
 // rarely (if ever) used.  If you comment this line out, the halt
